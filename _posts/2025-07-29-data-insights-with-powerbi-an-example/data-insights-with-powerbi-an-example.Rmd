@@ -1,0 +1,30 @@
+---
+title: "Data Insights with PowerBI: An Example"
+author: "Mehedi Hasan Jim"
+date: 2025-07-29
+output:
+  html_document:
+    theme: flatly
+   
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+## Overall Insights
+
+1. October had the highest unit of sales and revenue
+2. January had the lowest unit of sales but March has the lowest revenue. 
+3. Chocolate chips bought the most revenue.
+4. Total Profit 2.72M
+5. Profit per order $`r round(272000/700,1)`.
+
+<div class = "pdfcontent">
+
+<embed src="Example of PowerBI.pdf#zoom=77" width="1200px" height="700px" type="application/pdf">
+
+</div>

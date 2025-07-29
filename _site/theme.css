@@ -1,0 +1,36 @@
+
+
+.distill-site-nav.distill-site-header {
+  padding: 10px;
+color: rgba(255,255,255, 0.8);
+  background-color: #001524;
+}
+
+
+.nav-left{
+
+  background-color: #ffba0800;
+
+}
+
+
+.nav-right{
+
+  background-color: #ffba0800;
+
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+.distill-site-footer {
+ 
+}
+
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
