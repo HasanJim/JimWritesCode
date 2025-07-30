@@ -3,8 +3,8 @@ title: "Data Insights with PowerBI: An Example"
 author: "Mehedi Hasan Jim"
 date: 2025-07-29
 output:
-  html_document:
-    theme: flatly
+  distill::distill_article:
+    self_contained: false
    
 ---
 

@@ -1,6 +1,6 @@
 [
   {
-    "path": "posts/2025-07-29-data-insights-with-powerbi-an-example/",
+    "path": "posts/post 3 data-insights-with-powerbi-an-example/",
     "title": "Data Insights with PowerBI: An Example",
     "description": {},
     "author": [
@@ -13,28 +13,11 @@
     "categories": [],
     "contents": "\r\nOverall Insights\r\nOctober had the highest unit of sales and revenue\r\nJanuary had the lowest unit of sales but March has the lowest revenue.\r\nChocolate chips bought the most revenue.\r\nTotal Profit 2.72M\r\nProfit per order $388.6.\r\n\r\n\r\n\r\n\r\n\r\n\r\n",
     "preview": {},
-    "last_modified": "2025-07-29T20:52:21+06:00",
-    "input_file": "data-insights-with-powerbi-an-example.knit.md"
-  },
-  {
-    "path": "posts/post 1 welcome/",
-    "title": "Welcome to JimWritesCode",
-    "description": "Welcome to my blog, JimWritesCode. We hope you enjoy \nreading what we have to say!",
-    "author": [
-      {
-        "name": "Mehedi Hasan Jim",
-        "url": {}
-      }
-    ],
-    "date": "2025-07-25",
-    "categories": [],
-    "contents": "\r\n\r\n\r\n\r\n",
-    "preview": {},
-    "last_modified": "2025-07-25T23:39:17+06:00",
+    "last_modified": "2025-07-29T21:01:05+06:00",
     "input_file": {}
   },
   {
-    "path": "posts/post 2 2025-07-25-predicting-consumer-price-index/",
+    "path": "posts/post 2 predicting-consumer-price-index/",
     "title": "Predicting Consumer Price Index: A Time Series Analysis",
     "description": "A short description of the post.",
     "author": [
@@ -46,7 +29,7 @@
     "date": "2025-07-25",
     "categories": [],
     "contents": "\r\nWe will use the US Consumer Price Index (CPI) data set from the tseries package.\r\nThe data set is part of NelPlo data.\r\n\r\n[1] 3.295837 3.295837 3.401197 3.610918 3.871201 3.850148\r\n\r\nTest and Training Set\r\nTo understand which forecasting method performs the best it’s necessary to evaluate them based on training and testing data. We take the last 8 years for testing data.\r\n\r\nTime Series:\r\nStart = 1981 \r\nEnd = 1986 \r\nFrequency = 1 \r\n[1] 5.607122 5.666905 5.698524 5.740791 5.775783 5.794200\r\n\r\nPloting the data\r\nIt’s essential to plot the data to understand it. Plotting the data will help to get idear about the nature of the data and the potential models that can be applied.\r\n\r\n\r\n\r\nLet’s take first difference of the data to see whether the trend/ drift goes away or not.\r\n\r\n\r\n\r\nSeems like differencing is making it trend stationary. Need to ensure wheater the variable at level and/or variable at first difference has unit root or not.\r\nNote: A series with unit root has time variant mean and/or variance.\r\nNow let’s explore the unit root, ACF and PACF to understand what will be the potential values of p,d and q in the ARIMA model\r\n\r\n\r\n############################################### \r\n# Augmented Dickey-Fuller Test Unit Root Test # \r\n############################################### \r\n\r\nTest regression drift \r\n\r\n\r\nCall:\r\nlm(formula = z.diff ~ z.lag.1 + 1 + z.diff.lag)\r\n\r\nResiduals:\r\n      Min        1Q    Median        3Q       Max \r\n-0.210887 -0.013672 -0.003596  0.014998  0.141449 \r\n\r\nCoefficients:\r\n             Estimate Std. Error t value Pr(>|t|)    \r\n(Intercept) -0.018622   0.031539  -0.590    0.556    \r\nz.lag.1      0.006902   0.008197   0.842    0.402    \r\nz.diff.lag   0.601908   0.078320   7.685 5.38e-12 ***\r\n---\r\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\r\n\r\nResidual standard error: 0.04628 on 116 degrees of freedom\r\nMultiple R-squared:  0.3811,    Adjusted R-squared:  0.3705 \r\nF-statistic: 35.72 on 2 and 116 DF,  p-value: 8.176e-13\r\n\r\n\r\nValue of test-statistic is: 0.842 1.8483 \r\n\r\nCritical values for test statistics: \r\n      1pct  5pct 10pct\r\ntau2 -3.46 -2.88 -2.57\r\nphi1  6.52  4.63  3.81\r\n\r\nThe unit root test (Null: The series has unit root.) shows that CPI has unit root at level.\r\n\r\n\r\n############################################### \r\n# Augmented Dickey-Fuller Test Unit Root Test # \r\n############################################### \r\n\r\nTest regression drift \r\n\r\n\r\nCall:\r\nlm(formula = z.diff ~ z.lag.1 + 1 + z.diff.lag)\r\n\r\nResiduals:\r\n      Min        1Q    Median        3Q       Max \r\n-0.200573 -0.014820 -0.000801  0.019576  0.119296 \r\n\r\nCoefficients:\r\n             Estimate Std. Error t value Pr(>|t|)    \r\n(Intercept)  0.008329   0.004295   1.939   0.0549 .  \r\nz.lag.1     -0.473913   0.079481  -5.963 2.79e-08 ***\r\nz.diff.lag   0.253094   0.089841   2.817   0.0057 ** \r\n---\r\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\r\n\r\nResidual standard error: 0.04422 on 115 degrees of freedom\r\nMultiple R-squared:  0.2362,    Adjusted R-squared:  0.2229 \r\nF-statistic: 17.78 on 2 and 115 DF,  p-value: 1.864e-07\r\n\r\n\r\nValue of test-statistic is: -5.9626 17.7772 \r\n\r\nCritical values for test statistics: \r\n      1pct  5pct 10pct\r\ntau2 -3.46 -2.88 -2.57\r\nphi1  6.52  4.63  3.81\r\n\r\nThe test result shows that the first differnce series dos not have unit root.\r\n\r\n\r\n\r\n\r\n\r\n\r\nSeems like ARIMA(2,1,2) can be a good choice with two significant spikes in each of the plots. Let’s see what does auto.arima() say.\r\n\r\n\r\n\r\nforecast using auto.arima\r\n\r\n\r\n\r\nNotice that the forecasted values are very close to the real values. Remember that the last 8 years were not used in training. Seems a good fit. Let’s evaluate the fit.\r\nARIMA fit Evaluation\r\n\r\n                 ME  RMSE   MAE    MPE  MAPE  MASE   ACF1 Theil's U\r\nTraining set  0.002 0.044 0.028  0.046 0.724 0.696 -0.015        NA\r\nTest set     -0.015 0.027 0.021 -0.260 0.366 0.537  0.680     0.728\r\n\r\nNOt a bad result. Let’s fit some other models and compare them.\r\nHolt’s Exponential Smoothing\r\nSince no seasonality is possible for the data under study, we will use a simple Holt’s model.\r\n\r\n                 ME  RMSE  MAE    MPE  MAPE  MASE  ACF1 Theil's U\r\nTraining set  0.001 0.050 0.03  0.040 0.805 0.771 0.078        NA\r\nTest set     -0.320 0.379 0.32 -5.521 5.521 8.089 0.642    10.149\r\n\r\n\r\n\r\n\r\nLet’s get to the damped Holt’s model\r\n\r\n                ME  RMSE   MAE   MPE  MAPE  MASE  ACF1 Theil's U\r\nTraining set 0.005 0.050 0.032 0.105 0.841 0.813 0.239        NA\r\nTest set     0.023 0.026 0.023 0.394 0.394 0.574 0.230     0.667\r\n\r\n\r\nThe damped model predicted the same as the usual model. So far the ARIMA seems a better fit.\r\nNote: we could use the ets() function here.\r\nThis line is a trial commit.\r\n\r\n\r\n\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
-    "preview": "posts/post 2 2025-07-25-predicting-consumer-price-index/predicting-consumer-price-index_files/figure-html5/unnamed-chunk-2-1.png",
+    "preview": "posts/post 2 predicting-consumer-price-index/predicting-consumer-price-index_files/figure-html5/unnamed-chunk-2-1.png",
     "last_modified": "2025-07-25T11:38:01+06:00",
     "input_file": {}
   }

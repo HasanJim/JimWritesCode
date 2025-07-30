@@ -6,14 +6,28 @@
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2025-07-25T23:39:36+06:00"
+      "last_modified": "2025-07-29T21:04:33+06:00"
     },
     {
       "path": "index.html",
       "title": "JimWritesCode",
       "author": [],
       "contents": "\r\n\r\n\r\n\r\n",
-      "last_modified": "2025-07-25T23:39:37+06:00"
+      "last_modified": "2025-07-29T21:04:34+06:00"
+    },
+    {
+      "path": "skeleton.html",
+      "title": "Untitled",
+      "description": "A new article created using the Distill format.\n",
+      "author": [
+        {
+          "name": "Nora Jones",
+          "url": "https://example.com/norajones"
+        }
+      ],
+      "date": "`r Sys.Date()`",
+      "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill for R Markdown at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+      "last_modified": "2025-07-29T21:04:36+06:00"
     }
   ],
   "collections": ["posts/posts.json"]
