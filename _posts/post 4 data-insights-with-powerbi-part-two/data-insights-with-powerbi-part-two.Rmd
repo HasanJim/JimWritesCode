@@ -1,0 +1,36 @@
+---
+title: "Data Insights with PowerBI: Part Two"
+
+author:
+  - name: Mehedi Hasan Jim
+    url: https://www.linkedin.com/in/hasan-jim/
+date: 2025-07-30
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+
+## Overall Insights
+
+1. Total Revinue $4.69M,
+which fails to meet the target of $8m.
+
+2. Total number of customer is 700 which is less than the half of the target.
+
+3. Most of the profit comes from the Chocolate Chips cookie, nearly 37% of the total profit.
+
+4. Fortune cookie has the lowest sales all over the year. Need to revise the decision whether to continue it or not.
+
+
+<div class = "pdfcontent">
+
+<embed src="Example of PowerBI2.pdf#zoom=77" width="1200px" height="700px" type="application/pdf">
+
+</div>

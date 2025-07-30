@@ -1,10 +1,9 @@
 ---
 title: "Predicting Consumer Price Index: A Time Series Analysis"
-description: |
-  A short description of the post.
+
 author:
   - name: Mehedi Hasan Jim
-    url: 
+    url: https://www.linkedin.com/in/hasan-jim/
 date: 2025-07-25
 output:
   distill::distill_article:

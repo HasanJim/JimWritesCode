@@ -1,6 +1,8 @@
 ---
-title: "Data Insights with PowerBI: An Example"
-author: "Mehedi Hasan Jim"
+title: "Data Insights with PowerBI: Part One"
+author:
+  - name: Mehedi Hasan Jim
+    url: https://www.linkedin.com/in/hasan-jim/
 date: 2025-07-29
 output:
   distill::distill_article:

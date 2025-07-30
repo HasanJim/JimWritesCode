@@ -5,8 +5,7 @@ description: |
   Welcome to the world where Jim Writes Code!
 output_dir: "_site"
 navbar:
-  logo:
-    image: JIM.JPG
+   
   right:
     - text: "Home"
       href: index.html
